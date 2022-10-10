@@ -20,11 +20,6 @@ const db = pgp(config);
 const testingFunction = TestingFunction(db);
 
 // const greeting = Greeting();
-
-
-// module.exports = db;
-
-
 //setting up handlebars
 app.engine('handlebars', exphb.engine({defaultLayout : false}));
 app.set('view engine', 'handlebars');

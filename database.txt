@@ -1,0 +1,6 @@
+GRANT ALL PRIVILEGES on TABLE user_names TO greet_unit;
+GRANT ALL PRIVILEGES on SEQUENCE user_names_id_seq TO greet_unit;
+
+ALTER TABLE databasechangelog OWNER TO arwin_ash;
+
+GRANT posgress TO greet_unit;
