@@ -5,37 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skeleton.css">
+    {{!-- <link rel="stylesheet" href="css/skeleton.css"> --}}
 
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+
+    <title></title>
 </head>
 <body>
-
-<div class="container">
-
+    <div class="container">
+<a class="greetedAncor" href="/greeted">Greeted Users</a>
+    </div>
     <h1>Greetings</h1>
+    {{!-- added line  --}}
+    <div class="container">
     <form action="/greetme"  method="POST">
+
+    <div class="testFlash">
+            <h5>{{messages.success}}</h5>
+        </div>
+        <div class="testError">
+            <h5>{{messages.error}}</h5>
+        </div>
        
        <div class="textField"> <label for="">First Name :</label> 
         <input type="text" name="inputName" id="" value="{{nameValue}}">
     </div> <br>
     <div class="radioField">
-        <input type="radio" name="languages" id="" value="english"><label for="">English</label>
+        {{!-- <input type="radio" name="languages" id="" value="english"> --}}
+        <label for="">
+            <input type="radio" name="languages" id="" value="english">
+            English
+            </label>
         {{!-- <label for="">English</label> --}}
         <input type="radio" name="languages" id="" value="sepedi">
         <label for="">Sepedi</label>
         <input type="radio" name="languages" id="" value="tsonga">
-        <label for="">Tsonga</label> 
+        <label for="">Tsonga</label> <br>
         <input type="submit" value="GREET">
     </div><br>
     </form>
+    {{!-- end line --}}
+    </div>
+    <div class="clearBtn">
+        <form action="/clear" method="post">
+        <input type="submit" value="Clear">
+        </form>
+
+    </div>
+
+    <div class="conatainer">
+        <div>
+        <h3><span>{{printMessage}}</span></h3>
+    </div>
     <div>
-        <h5><span>{{printMessage}}</span></h5>
+        <h4>count : {{counter}}</h4>
     </div>
-
-
-
     </div>
+    
+
+
+
+    
     
 </body>
 </html>

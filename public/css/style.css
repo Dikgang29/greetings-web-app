@@ -1,5 +1,4 @@
-.radioField{
-    
+.radioField{    
     text-align: center;
     margin: 30px, 5px;
 }
@@ -15,6 +14,62 @@
 h1{
     text-align: center;
 }
-h5{
+h3{
     text-align : center;
+    color: red;
+}
+h4{
+  text-align : center;
+}
+
+.clearBtn{
+  text-align: center;
+}
+
+.greetedAncor{
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+
+  .greetedAncor{
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+  .homeAncor{
+    background-color: #581993;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button2 {background-color: #008CBA;}
+
+  /* container  */
+  .container{
+    text-align: center;
+  }
+
+  /* flash implemantation  */
+  .testFlash{
+    color:green;
+}
+.testError{
+ color: red;
 }
