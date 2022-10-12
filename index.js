@@ -15,7 +15,11 @@ const DATABASE_URL =  process.env.DATABASE_URL || `postgresql://greete_admin:gre
 const config = {
     connectionString: DATABASE_URL
 }
-
+if(process.env.NODE_ENV == 'production'){
+    config.ssl ={
+        rejectUnauthorized: false
+    }
+}
 const db = pgp(config);
 const testingFunction = TestingFunction(db);
 
