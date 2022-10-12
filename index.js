@@ -79,6 +79,7 @@ app.post('/greetme',  (req,res)=>{
     res.redirect(`/`);
 });
 
+
 app.post('/clear', (req,res)=>{
     req.flash('success', 'Counter cleared');
     testingFunction.deleteAll();
