@@ -49,8 +49,6 @@ app.get('/',  async (req,res)=>{
         nameValue: greeting.getGreetMessage().personName,
         printMessage: greeting.getGreetMessage().message,
         counter, 
-    
-
     });
     
 });
