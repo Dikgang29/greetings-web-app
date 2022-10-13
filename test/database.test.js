@@ -23,78 +23,78 @@ describe('The basic database web app', function(){
         }
     });
 
-    it('should show the user that has been greeted', async function(){
-        
-        // the Factory Function is called CategoryService
-        let testingfunction  = TestingFunction(db);
-        await testingfunction.namesInDatabase('Dikgang');
-
-
-        let getNames = await testingfunction.getNamesInDatabase();
-        let getUserGreeted = getNames[0];
-        
-assert.equal('Dikgang', getUserGreeted.users_greeted);
-    
-    });
-//     it('should show how many times a user has ben greeted', async function(){
+//     it('should show the user that has been greeted', async function(){
         
 //         // the Factory Function is called CategoryService
 //         let testingfunction  = TestingFunction(db);
-//         await testingfunction.namesInDatabase('Dikgang');
 //         await testingfunction.namesInDatabase('Dikgang');
 
 
 //         let getNames = await testingfunction.getNamesInDatabase();
 //         let getUserGreeted = getNames[0];
-// assert.equal(2, getUserGreeted.name_counter);
+        
+// assert.equal('Dikgang', getUserGreeted.users_greeted);
     
 //     });
+    it('should show how many times a user has ben greeted', async function(){
+        
+        // the Factory Function is called CategoryService
+        let testingfunction  = TestingFunction(db);
+        await testingfunction.namesInDatabase('Dikgang');
+        await testingfunction.namesInDatabase('Dikgang');
+
+
+        let getNames = await testingfunction.getNamesInDatabase();
+        let getUserGreeted = getNames[0];
+assert.equal(2, getUserGreeted.name_counter);
+    
+    });
    
-//     it('should show all users', async function(){
+    it('should show all users', async function(){
         
-//         let testingfunction  = TestingFunction(db);
-//         await testingfunction.namesInDatabase('Boitumelo');
-//         await testingfunction.namesInDatabase('Boitumelo');
-//         await testingfunction.namesInDatabase('Tshegofatso');
-//         await testingfunction.namesInDatabase('Kaboentle');
+        let testingfunction  = TestingFunction(db);
+        await testingfunction.namesInDatabase('Boitumelo');
+        await testingfunction.namesInDatabase('Boitumelo');
+        await testingfunction.namesInDatabase('Tshegofatso');
+        await testingfunction.namesInDatabase('Kaboentle');
 
-//         let getNames = await testingfunction.getNamesInDatabase();
+        let getNames = await testingfunction.getNamesInDatabase();
     
-// assert.deepEqual([{id:1, users_greeted: 'Boitumelo', name_counter:2},
-// {id:2, users_greeted: 'Tshegofatso', name_counter:1},
-// {id:3, users_greeted: 'Kaboentle', name_counter:1}
-// ], getNames);
+assert.deepEqual([{id:1, users_greeted: 'Boitumelo', name_counter:2},
+{id:2, users_greeted: 'Tshegofatso', name_counter:1},
+{id:3, users_greeted: 'Kaboentle', name_counter:1}
+], getNames);
     
-//     });
-//     it('should return the count', async function(){
+    });
+    it('should return the count', async function(){
         
-//         let testingfunction  = TestingFunction(db);
-//         await testingfunction.namesInDatabase('Boitumelo');
-//         await testingfunction.namesInDatabase('Tshegofatso');
-//         await testingfunction.namesInDatabase('Kaboentle');
+        let testingfunction  = TestingFunction(db);
+        await testingfunction.namesInDatabase('Boitumelo');
+        await testingfunction.namesInDatabase('Tshegofatso');
+        await testingfunction.namesInDatabase('Kaboentle');
 
 
-//         let getCount = await testingfunction.getDatabaseCount();
-//         const theCount = getCount[0];
+        let getCount = await testingfunction.getDatabaseCount();
+        const theCount = getCount[0];
 
-// assert.equal('3', theCount);
+assert.equal('3', theCount);
     
-//     });
-//     it('should reset the count/ delete from the table', async function(){
+    });
+    it('should reset the count/ delete from the table', async function(){
         
-//         let testingfunction  = TestingFunction(db);
-//         await testingfunction.namesInDatabase('Boitumelo');
-//         await testingfunction.namesInDatabase('Tshegofatso');
-//         await testingfunction.namesInDatabase('Kaboentle');
+        let testingfunction  = TestingFunction(db);
+        await testingfunction.namesInDatabase('Boitumelo');
+        await testingfunction.namesInDatabase('Tshegofatso');
+        await testingfunction.namesInDatabase('Kaboentle');
 
-//          await testingfunction.deleteAll();
-//         let getCount = await testingfunction.getDatabaseCount();
-//         let theCount = getCount[0];
+         await testingfunction.deleteAll();
+        let getCount = await testingfunction.getDatabaseCount();
+        let theCount = getCount[0];
         
 
-// assert.equal('0', theCount);
+assert.equal('0', theCount);
     
-//     });
+    });
    
 
     after(function(){
