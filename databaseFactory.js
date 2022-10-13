@@ -30,7 +30,7 @@ module.exports = function TestingFunction(db){
             databaseCounter
         }
     }
-
+ 
     async function getUser(name){
         const singleUser = await db.any(`SELECT users_greeted,name_counter FROM user_names WHERE users_greeted = $1;`, [name])
         return singleUser;
