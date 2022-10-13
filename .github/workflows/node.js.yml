@@ -36,13 +36,14 @@ strategy:
   matrix:
     node-version: [12.x, 14.x, 16.x]
     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    # 'postgresql://greet_unit:testing@localhost:5432/greet_tests'
 services:
   postgres:
     image: postgres:latest
     env: 
-      POSTGRES_USER: <your_database_user>
-      POSTGRES_PASSWORD: <your_password>
-      POSTGRES_DB: <your_database_name>
+      POSTGRES_USER: postgresql
+      POSTGRES_PASSWORD: testing
+      POSTGRES_DB: greet_tests
     ports:
     - 5432:5432
     # Set health checks to wait until postgres has started
@@ -57,9 +58,9 @@ steps:
 - name: Install dependencies
   run: npm install
 - name: create postgresql tables
-  run: PGPASSWORD=<your_databse_password> psql -h localhost -U <your_databse_user> -d <your_databse_name> -a -f <path_to_sql_script eg - ./table.sql >
+  run: PGPASSWORD=testing psql -h localhost -U greet_unit -d greet_tests -a -f ../table.sql
 - name: run tests with postgresql
   run:
     npm test
   env:
-    DATABASE_URL: <your_databse_connection_string>
+    DATABASE_URL: postgresql://greet_unit:testing@localhost:5432/greet_tests
