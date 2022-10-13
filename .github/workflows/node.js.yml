@@ -41,7 +41,7 @@ services:
   postgres:
     image: postgres:latest
     env: 
-      POSTGRES_USER: postgresql
+      POSTGRES_USER: greet_unit
       POSTGRES_PASSWORD: testing
       POSTGRES_DB: greet_tests
     ports:
