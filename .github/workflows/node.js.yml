@@ -34,12 +34,13 @@ services:
   postgres:
     image: postgres:latest
     env: 
-      POSTGRES_USER: <your_database_user>
-      POSTGRES_PASSWORD: <your_password>
-      POSTGRES_DB: <your_database_name>
+      POSTGRES_USER: greet_unit
+      POSTGRES_PASSWORD: testing
+      POSTGRES_DB: greet_tests
     ports:
     - 5432:5432
     # Set health checks to wait until postgres has started
+    # 'postgresql://greet_unit:testing@localhost:5432/greet_tests'
     options: >-
         --health-cmd pg_isready
         --health-interval 10s
@@ -51,7 +52,7 @@ steps:
 - name: Install dependencies
   run: npm install
 - name: create postgresql tables
-  run: PGPASSWORD=<your_databse_password> psql -h localhost -U <your_databse_user> -d <your_databse_name> -a -f <path_to_sql_script eg - ./table.sql >
+  run: PGPASSWORD= testing psql -h localhost -U greet_unit -d <your_databse_name> -a -f ../table.sql
 - name: run tests with postgresql
   run:
     npm test
