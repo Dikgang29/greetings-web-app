@@ -52,9 +52,9 @@ steps:
 - name: Install dependencies
   run: npm install
 - name: create postgresql tables
-  run: PGPASSWORD= testing psql -h localhost -U greet_unit -d <your_databse_name> -a -f ../table.sql
+  run: PGPASSWORD= testing psql -h localhost -U greet_unit -d greet_tests -a -f ../table.sql
 - name: run tests with postgresql
   run:
     npm test
   env:
-    DATABASE_URL: <your_databse_connection_string>
+    DATABASE_URL: postgresql://greet_unit:testing@localhost:5432/greet_tests
