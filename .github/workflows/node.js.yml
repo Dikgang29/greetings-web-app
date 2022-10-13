@@ -20,7 +20,7 @@ jobs:
           POSTGRES_DB: greet_tests
           POSTGRES_PASSWORD: testing
           POSTGRES_PORT: 5432
-          POSTGRES_USER: postgres
+          POSTGRES_USER: greet_unit
         ports:
           - 5432:5432
         options: >-
