@@ -23,19 +23,6 @@ describe('The basic database web app', function(){
         }
     });
 
-//     it('should show the user that has been greeted', async function(){
-        
-//         // the Factory Function is called CategoryService
-//         let testingfunction  = TestingFunction(db);
-//         await testingfunction.namesInDatabase('Dikgang');
-
-
-//         let getNames = await testingfunction.getNamesInDatabase();
-//         let getUserGreeted = getNames[0];
-        
-// assert.equal('Dikgang', getUserGreeted.users_greeted);
-    
-//     });
     it('should show how many times a user has ben greeted', async function(){
         
         // the Factory Function is called CategoryService
