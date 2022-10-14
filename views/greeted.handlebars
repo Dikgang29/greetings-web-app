@@ -5,22 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/style.css">
     <title>Greeted Users</title>
 </head>
 <body>
-        <a class="homeAncor" href="/">
+
+    <div class="containser">
+        <div class="greetedButton">
+            <button>
+        <a class="" href="/">
         Home
         </a>
+            </button>
+        </div>
     <div class="listOfUsers">
  <h1>GREETED NAMES</h1>
     {{#each listedNames}}
-    <p> <a href="/counter/{{users_greeted}}">
+    <h3> <a href="/counter/{{users_greeted}}">
     {{users_greeted}}
     </a>
-    </p>
+    </h3>
     {{/each}}
 
+    </div>
     </div>
    
 </body>

@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+
+    
     <div class="navigation">
 
 {{!-- <a class="homeAncor" href="/">
@@ -16,13 +21,22 @@ Home
 </a> --}}
 
 {{!-- <a  href="/greeted" > --}}
+
+<div class="text-center">
 <button class="button"><a href="/greeted" > Greeted Users </a></button>
+</div>
 {{!-- </a> --}}
 </div>
-<div class="singleUser">
-    <p>
+<div class="text-center">
+    
+        <h4>
         Hello {{name}}, you have been greeted {{nameCounter}} time(s)
-    </p>
+    </h4>
+    
+    
+    
+</div>
+
 </div>
 </body>
 </html>
