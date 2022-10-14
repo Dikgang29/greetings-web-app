@@ -72,9 +72,15 @@ app.post('/greetme',  (req,res)=>{
         req.flash('error', 'Please select a language');
     }
     else if(languages, inputName){
-        req.flash('success', 'User has been greeted successfully');
-    testingFunction.namesInDatabase(name);
-    greeting.setGreeting(languages, inputName);
+
+        if(inputName>=0 || inputName<=0){
+        req.flash('error', 'Input a valid name not a number');
+        }
+        else{
+            req.flash('success', 'User has been greeted successfully');
+        testingFunction.namesInDatabase(name);
+        greeting.setGreeting(languages, inputName);
+        }
     }
     res.redirect(`/`);
 });
